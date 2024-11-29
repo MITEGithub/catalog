@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "video-swiper": "/pages/live/@miniprogram-component-plus/video-swiper/miniprogram_dist/index"
+    }
+}

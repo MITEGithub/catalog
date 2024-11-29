@@ -1,0 +1,54 @@
+<view class="wrap">
+  <!-- fs -->
+  <view class="form">
+  <!-- <popup > -->
+    <view class="role">
+      <image src="{{avatarUrl}}" mode="" />
+    </view>
+  <!-- </popup> -->
+    <view class="name">
+      <text>{{nickname}}</text>
+    </view>
+    <view class="show">
+      <view class="info">
+        <view class="info-item">
+          <view class="info-pic">{{followers}}</view>
+          <view class="info-text">我关注的</view>
+        </view>
+        <view class="gang"></view>
+        <view class="info-item">
+          <view class="info-pic">{{photos}}</view>
+          <view class="info-text">我的图片</view>
+        </view>
+        <view class="gang"></view>
+        <view class="info-item">
+          <view class="info-pic">{{upvokeds}}</view>
+          <view class="info-text">我的点赞</view>
+        </view>
+      </view>
+      <view class="choose">
+        <view class="choose-item">
+          <image src="../../../images/my/index/edit.png" />
+          <view class="title" bind:tap="changeRange">修改个人信息</view>
+        </view>
+        <view class="choose-item">
+          <image src="../../../images/my/index/friend.png" />
+          <button open-type="share" class="butten-text">邀请好友</button>
+        </view>
+        <view class="choose-item">
+          <image src="../../../images/my/index/like.png" />
+          <view class="title" bindtap="onAttention">我创建的卡片</view>
+        </view>
+        <view class="choose-item">
+          <image src="../../../images/my/index/bubble.png" />
+          <view class="title" bindtap="onFeedback">信息反馈</view>
+        </view>
+        <view class="choose-item">
+          <image src="../../../images/my/index/close.png" />
+          <view class="title" bind:tap="onFree">清除缓存</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <popup class="popup" id='popup' title='修改个人信息' avatarUrl="{{avatarUrl}}" bind:updataAvatar="updataAvatar"></popup>
+</view>

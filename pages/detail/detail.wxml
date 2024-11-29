@@ -1,0 +1,41 @@
+<view class="detail">
+    <image src="{{img_src}}" mode="aspectFill" />
+    <view class="info">
+        <text class="name">{{name}}</text>
+        <view class="location">
+            <text>出没地点：</text>
+            {{location}}
+        </view>
+        <text class="intro">{{intro}}</text>
+    </view>
+    <view class="interaction">
+        <view class="btn" bindtap="changeLike">
+            <image wx:if="{{is_like}}" src="/img/点赞-on.png" mode="" />
+            <image wx:else src="/img/点赞-off.png" mode="" />
+        </view>
+        <view class="btn" bindtap="changeStar">
+            <image wx:if="{{is_star}}" src="/img/收藏-on.png" mode="" />
+            <image wx:else src="/img/收藏-off.png" mode="" />
+        </view>
+        <view class="btn" bind:tap="onUploadCardImg">
+            <image src="/img/追加.png" mode="" />
+        </view>
+    </view>
+</view>
+<view class="photos" wx:for="{{photos}}" wx:key="index">
+    <view class="month">
+        <image src="/img/月份.png" mode="" />
+        {{item.day}}
+    </view>
+    <view class="line"></view>
+    <view class="img_box">
+        <view wx:for="{{item.photo}}" bindtap="tapPhoto" data-photoSrc="{{item}}" wx:key="index">
+            <image src="{{item}}" mode="aspectFill" />
+        </view>
+    </view>
+</view>
+<view wx:if="{{display}}" class="overlay" bindtap="clickClose">
+    <view class="img">
+        <image src="{{showing_photo}}" mode="aspectFill" />
+    </view>
+</view>

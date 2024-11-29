@@ -1,0 +1,70 @@
+{
+    "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "projectname": "TA%E6%97%A5%E8%AE%B0",
+    "setting": {
+        "compileHotReLoad": true
+    },
+    "libVersion": "3.6.5",
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/new/new",
+                    "pathName": "pages/new/new",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "pages/msgDetail/msgDetail",
+                    "pathName": "pages/msgDetail/msgDetail",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "pages/msg/msg",
+                    "pathName": "pages/msg/msg",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "new",
+                    "pathName": "pages/new/new",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "my",
+                    "pathName": "pages/my/index/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "pages/detail/detail",
+                    "pathName": "pages/detail/detail",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "pages/new/new",
+                    "pathName": "pages/new/new",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "pages/live/live",
+                    "pathName": "pages/live/live",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<view class="container">
+    <view class="head">
+        <view class="text">消息列表</view>
+        <view class="unread_num" wx:if="{{unread_num}}">{{unread_num}}</view>
+    </view>
+    <view class="msg-wrap">
+        <view url="/pages/msgDetail/msgDetail" class="msg" wx:for="{{msgs}}">
+            <view class="read" wx:if="{{!item.is_read}}"></view>
+            <navigator url="/pages/msgDetail/msgDetail">
+                <image class="status" src="/img/管理员.png" mode="aspectFit" />
+            </navigator>
+            <navigator url="/pages/msgDetail/msgDetail">
+                <text>{{item.content}}</text>
+            </navigator>
+            <image class="del-btn" bindtap="clickDel" data-index="{{index}}" src="/img/删除.png" mode="" />
+        </view>
+    </view>
+    <view class="no_msg" wx:if="{{!msgs.length}}">
+        <image src="/img/No Message.png" mode="" />
+        暂无消息
+    </view>
+</view>

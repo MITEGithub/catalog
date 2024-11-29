@@ -1,0 +1,10 @@
+<view class="container">
+    <view class="head">
+        <image src="/img/管理员.png" mode="aspectFit"/>
+        <text>卡片审核结果</text>
+    </view>
+    <view class="line"></view>
+    <text class="content">您申请创建的卡片XXX,因出现敏感词汇,审核未通过。</text>
+    <view class="status"><image src="/img/错误 _R.png" mode="aspectFit"/></view>
+    <view class="time"><view>2024-11-25</view></view>
+</view>

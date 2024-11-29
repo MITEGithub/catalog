@@ -1,0 +1,24 @@
+<view class="half-screen">
+  <!-- 屏幕背景变暗的背景 -->
+  <view class="background_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!-- 弹出框 -->
+  <view animation="{{animationData}}" class="attr_box" wx:if="{{showModalStatus}}">
+    <!-- <image class="back" src="../../assets/back.png" bindtap="hideModal"></image> -->
+    <view class="ctTitle">{{title}}</view>
+    <text class="Text">头像</text>
+    <text class="Text-tips">tips:请点击头像，当前头像是默认头像</text>
+    <view class="plain"></view>
+    <button class="btnAvatar" open-type="chooseAvatar" bindchooseavatar="chooseavatar">
+      <image id="sdf" src="{{avatarUrl}}" mode="" />
+    </button>
+    <view class="plain"></view>
+    <!-- <text class="Text">昵称</text> -->
+    <!-- <text class="Text-tips">tips:你可以不使用微信名作为昵称，直接在输入行中输入即可</text> -->
+    <form bindsubmit="onSubmit" class="submit-input">
+      <input type="nickname" name="nickname" placeholder="请输入昵称" placeholder-class="center" />
+      <button id="yes" class="confirm" size="mini" type="primary" bindtap="hideModal" plain form-type="submit">
+        保存
+      </button>
+    </form>
+  </view>
+</view>

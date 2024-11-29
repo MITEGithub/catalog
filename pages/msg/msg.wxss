@@ -1,0 +1,75 @@
+/* pages/msg/msg.wxss */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20rpx 0;
+    gap: 20rpx;
+    color: rgb(88, 88, 88);
+}
+.head{
+    width: 90%;
+    display: flex;
+    gap: 30rpx;
+    align-items: center;
+}
+.unread_num{
+    width: 35rpx;
+    height: 35rpx;
+    color: #fff;
+    background-color: rgb(233, 135, 135);
+    text-align: center;
+    line-height: 35rpx;
+    font-size: 26rpx;
+    border-radius: 50%;
+}
+.head .del-btn image{
+    width: 50rpx;
+    height: 50rpx;
+}
+.msg-wrap{
+    width: 90%;
+}
+.msg{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20rpx 0;
+    border-bottom: 4rpx solid #d1c293;
+    position: relative;
+}
+.msg:first-child{
+    border-top: 4rpx solid #d1c293;
+}
+.msg .status{
+    width: 90rpx;
+    height: 90rpx;
+}
+.msg .del-btn{
+    width: 50rpx;
+    height: 50rpx;
+}
+.read{
+    position: absolute;
+    width: 20rpx;
+    height: 20rpx;
+    background-color: rgb(233, 135, 135);
+    border-radius: 50%;
+    top: 20rpx;
+    left: 25rpx;
+}
+.no_msg{
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    gap: 30rpx;
+    padding: 10rpx 0;
+    border-bottom: 6rpx solid #d1c293;
+    border-top: 6rpx solid #d1c293;
+}
+.no_msg image{
+    width: 60rpx;
+    height: 60rpx;
+}

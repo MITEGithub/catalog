@@ -1,0 +1,45 @@
+/* pages/live/live.wxss */
+page{
+    background-color: #FFFFFF;
+    height: 100%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.rooms{
+    display: flex;
+    width: 100%;
+    padding: 20rpx ;
+    justify-content: space-evenly;
+}
+.room{
+    width: 150rpx;
+    height: 46rpx;
+    text-align: center;
+    border-radius: 23rpx;
+    background-color: #d1c293;
+    color: #fff;
+}
+.video-swiper{
+    width: 100%;
+    height: 100%;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    color: rgba(255, 255, 255, 1);
+    font-size: 44rpx;
+    padding: 30rpx;
+    bottom: 0;
+    left: 0;
+    width: 500rpx;
+    height: 200rpx;
+}
+.info .intro{
+    font-size: 30rpx;
+}

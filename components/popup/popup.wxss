@@ -1,0 +1,88 @@
+/*使屏幕变暗  */
+.background_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+/*对话框 */
+.attr_box {
+  height: 450px;
+  width: 100%;
+  overflow: hidden;
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  border-radius: 40rpx;
+  /* padding: 50rpx; */
+}
+.attr_box .back {
+  margin-top: -30px;
+  height: 20px;
+  width: 20px;
+}
+.submit-input {
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  /* padding-top: 20rpx; */
+}
+.submit-input input{
+    text-align: center;
+}
+.submit-input button {
+  width: 100%;
+}
+.submit-input input {
+  padding-bottom: 20rpx;
+}
+.Text {
+  position: relative;
+  left: -40%;
+}
+.Text-tips {
+  position: relative;
+  left: -22%;
+  font-size: 20rpx;
+  color: #707070;
+}
+.plain {
+  width: 100%;
+  height: 30rpx;
+}
+.attr_box .ctTitle{
+  
+}
+.thresholdBtn .confirm{
+}
+.btnAvatar {
+  background-color: transparent;
+ 
+}
+.btnAvatar::after {
+  border: none;
+}
+.btnAvatar image {
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+}
+.center {
+  text-align: center;
+  font-size: 45rpx;
+}

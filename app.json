@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/live/live",
+    "pages/new/new",
+    "pages/search/search",
+    "pages/detail/detail",
+    "pages/my/index/index",
+    "pages/my/feekback/feekback",
+    "pages/my/attention/attention",
+    "pages/msg/msg",
+    "pages/msgDetail/msgDetail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#d1c293",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "/img/排行榜-off.png",
+        "selectedIconPath": "/img/排行榜-on.png"
+      },
+      {
+        "pagePath": "pages/live/live",
+        "text": "直播",
+        "iconPath": "/img/直播-off.png",
+        "selectedIconPath": "/img/直播-on.png"
+      },
+      {
+        "pagePath": "pages/my/index/index",
+        "text": "我的",
+        "iconPath": "/img/我的-off.png",
+        "selectedIconPath": "/img/我的-on.png"
+      }
+    ],
+    "backgroundColor": "#d1c293",
+    "selectedColor": "#000"
+  },
+  "style": "v2",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "defaultContentBox": true,
+      "tagNameStyleIsolation": "legacy",
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,28 @@
+<!-- pages/new/new.wxml -->
+<view class="container">
+    <view class="name">
+        <view class="title">昵称：</view>
+        <input type="text" class="ipt" bindinput="onName" />
+    </view>
+    <view class="location">
+        <view class="title">出没地点：</view>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+            <view class="picker ipt">
+                <view>{{multiArray[0][multiIndex[0]]}}</view>
+                <view>{{multiArray[1][multiIndex[1]]}}</view>
+                <view>{{multiArray[2][multiIndex[2]]}}</view>
+            </view>
+        </picker>
+    </view>
+    <view class="intro">
+        <view class="title">简介：</view>
+        <textarea class="ipt" value="" confirm-type="done" bindinput="onIntro" />
+    </view>
+    <view class="img ipt">
+        <image wx:if="{{img_src.length}}" src="{{img_src}}" mode="aspectFill" bind:tap="onUploadCardImg" />
+        <view wx:else class="select_img">
+            <image src="/img/图片.png" mode="aspectFill" bind:tap="onUploadCardImg" />
+        </view>
+    </view>
+    <view class="btn_done" bind:tap="onSubmitCard">完成</view>
+</view>

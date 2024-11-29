@@ -1,0 +1,156 @@
+<view class="head">
+    <view class="search">
+        <image src="/img/搜索-off.png" mode="aspectFit" />
+        <input type="text" confirm-type="search" placeholder="输入动物昵称" bindfocus="showHistory" bindblur="hideHistory" model:value="{{key_word}}" bindinput="onInput" />
+        <view class="btn-search" bind:tap="onSearch">
+            <text>搜索</text>
+        </view>
+    </view>
+    <navigator url="/pages/msg/msg" class="msg">
+        <image src="/img/消息.png" mode="" />
+        <view class="new_msg" wx:if="{{new_msg}}"></view>
+    </navigator>
+</view>
+<view class="history" wx:if="{{show_H && search_history.length}}">
+    <view class="title">搜索历史：</view>
+    <view class="text-wrap">
+        <text wx:for="{{search_history}}" wx:key="index" bindtap="useHistory" data-index="{{index}}">
+            {{item}}
+        </text>
+    </view>
+</view>
+<view class="nav">
+    <view class="btn {{style1}}" bindtap="selected1">
+        <image src="/img/推荐.png" mode="" />
+        <text>推荐</text>
+    </view>
+    <picker class="btn {{style2}}" bindtap="selected2" mode="selector" range="{{rank}}" value="{{rank_index}}" bindchange="totalOrDaily">
+        <image src="/img/点赞排名.png" mode="" />
+        <text>点赞排名</text>
+    </picker>
+    <picker class="btn {{style3}}" bindtap="selected3" mode="selector" range="{{follow}}" value="{{follow_index}}" bindchange="timeOrRecent">
+        <image src="/img/我的关注.png" mode="" />
+        <text>我的关注</text>
+    </picker>
+</view>
+<view class="cards">
+    <navigator class="normal" url="/pages/detail/detail?card_id={{item.card_id}}" wx:for="{{cards}}" wx:key="index" wx:if="{{showing=='cards'}}">
+        <view class="card">
+            <image src="{{item.img_url}}" mode="aspectFill" />
+            <view class="info">
+                <view class="text">
+                    <view class="name">{{item.name}}</view>
+                    <text class="location">
+                        <text>地点：</text>
+                        {{item.location}}
+                    </text>
+                    <text class="intro">{{item.intro}}</text>
+                </view>
+                <view class="img">
+                    <image src="/img/点赞-off.png" mode="" />
+                    <text class="like-num">{{item.like_num}}</text>
+                </view>
+            </view>
+        </view>
+    </navigator>
+    <navigator class="special" url="/pages/detail/detail?card_id={{item.card_id}}" wx:for="{{totalrank}}" wx:if="{{showing=='totalrank'}}" wx:key="index">
+        <view class="card">
+            <view class="ranking" wx:if="{{index+1}}">{{index+1}}</view>
+            <image src="{{item.img_url}}" mode="aspectFill" />
+            <view class="info">
+                <view class="text">
+                    <view class="name">{{item.name}}</view>
+                    <text class="location">
+                        <text>地点：</text>
+                        {{item.location}}
+                    </text>
+                    <text class="intro">{{item.intro}}</text>
+                </view>
+                <view class="img">
+                    <image src="/img/点赞-off.png" mode="" />
+                    <text class="like-num">{{item.like_num}}</text>
+                </view>
+            </view>
+        </view>
+    </navigator>
+    <navigator class="special" url="/pages/detail/detail?card_id={{item.card_id}}" wx:for="{{dailyrank}}" wx:if="{{showing=='dailyrank'}}" wx:key="index">
+        <view class="card">
+            <view class="ranking" wx:if="{{index+1}}">{{index+1}}</view>
+            <image src="{{item.img_url}}" mode="aspectFill" />
+            <view class="info">
+                <view class="text">
+                    <view class="name">{{item.name}}</view>
+                    <text class="location">
+                        <text>地点：</text>
+                        {{item.location}}
+                    </text>
+                    <text class="intro">{{item.intro}}</text>
+                </view>
+                <view class="img">
+                    <image src="/img/点赞-off.png" mode="" />
+                    <text class="like-num">{{item.like_num}}</text>
+                </view>
+            </view>
+        </view>
+    </navigator>
+    <navigator class="special" url="/pages/detail/detail?card_id={{item.card_id}}" wx:for="{{time}}" wx:if="{{showing=='time'}}" wx:key="index">
+        <view class="card">
+            <image src="{{item.img_url}}" mode="aspectFill" />
+            <view class="info">
+                <view class="text">
+                    <view class="name">{{item.name}}</view>
+                    <text class="location">
+                        <text>地点：</text>
+                        {{item.location}}
+                    </text>
+                    <text class="intro">{{item.intro}}</text>
+                </view>
+                <view class="img">
+                    <image src="/img/点赞-off.png" mode="" />
+                    <text class="like-num">{{item.like_num}}</text>
+                </view>
+            </view>
+        </view>
+    </navigator>
+    <navigator class="special" url="/pages/detail/detail?card_id={{item.card_id}}" wx:for="{{recent}}" wx:if="{{showing=='recent'}}" wx:key="index">
+        <view class="card">
+            <image src="{{item.img_url}}" mode="aspectFill" />
+            <view class="info">
+                <view class="text">
+                    <view class="name">{{item.name}}</view>
+                    <text class="location">
+                        <text>地点：</text>
+                        {{item.location}}
+                    </text>
+                    <text class="intro">{{item.intro}}</text>
+                </view>
+                <view class="img">
+                    <image src="/img/点赞-off.png" mode="" />
+                    <text class="like-num">{{item.like_num}}</text>
+                </view>
+            </view>
+        </view>
+    </navigator>
+    <navigator class="special" url="/pages/detail/detail?card_id={{item.card_id}}" wx:for="{{search_result}}" wx:if="{{showing=='search'}}" wx:key="index">
+        <view class="card">
+            <image src="{{item.img_url}}" mode="aspectFill" />
+            <view class="info">
+                <view class="text">
+                    <view class="name">{{item.name}}</view>
+                    <text class="location">
+                        <text>地点：</text>
+                        {{item.location}}
+                    </text>
+                    <text class="intro">{{item.intro}}</text>
+                </view>
+                <view class="img">
+                    <image src="/img/点赞-off.png" mode="" />
+                    <text class="like-num">{{item.like_num}}</text>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</view>
+<navigator class="new" url="/pages/new/new">
+    <image src="/img/追加.png" mode="" />
+</navigator>
